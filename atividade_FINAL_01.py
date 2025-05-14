@@ -31,11 +31,6 @@ def news(parametro1, parametro2):
     - Link para a matéria completa
     - Autor
     """
-    while parametro2 > 5:
-        print("="*20)
-        print("Você só pode buscar no máximo 5 notícias por vez.")
-        print("="*20)
-        return
 
     api_key = os.getenv("API_KEY_NEWS")
     
@@ -76,7 +71,17 @@ while True:
     elif opcao == "1":
         noticia = input("Quer Ver uma noticia sobre qual tema?")
         temas_buscados.append(noticia)
-        quantas = int(input("E quer Ver quantas noticias sobre esse tema?"))
+
+        while True:
+            quantas = int(input("Quantas noticias sobre esse tema?"))
+
+            if quantas > 5:
+                print("="*20)
+                print("O Limite de noticias por busca é de 5")
+                print("="*20)
+            else:
+                break
+                
         news(noticia, quantas)
 
     else:
