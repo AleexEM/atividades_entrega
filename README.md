@@ -32,8 +32,8 @@ O usuário escolhe o tema e a quantidade de notícias (máximo de 5), e o progra
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/AleexEM/atividades_entrega
+cd atividades_entrega
 
 ---
 
