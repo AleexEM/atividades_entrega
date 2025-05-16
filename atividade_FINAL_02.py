@@ -47,6 +47,13 @@ def menu():
 #         print(f"Descrição: {comentario['body']}")
 
 def visualiza_posts_e_comentarios():
+    """
+    Busca e exibe os 5 primeiros posts da API e seus respectivos comentários.
+    Atualiza as variáveis globais de total de posts e comentários visualizados.
+
+    Caso haja erro na requisição, informa o usuário.
+    """
+
     global total_posts_vistos, total_comentarios_vistos
 
     url_posts = "https://jsonplaceholder.typicode.com/posts"
@@ -81,6 +88,12 @@ def visualiza_posts_e_comentarios():
             print("Não foi possível carregar os comentários.")
 
 def ver_meus_posts():
+    """
+    Busca e exibe todos os posts do usuário simulado com user_id=1.
+    Atualiza a variável global de total de posts visualizados.
+
+    Caso haja erro na requisição, informa o usuário.
+    """
     global total_posts_vistos
 
     user_id = 1  # Simulação pro meu usuario
@@ -100,6 +113,12 @@ def ver_meus_posts():
         print("Erro ao buscar seus posts.")
 
 def ver_posts_de_outro_usuario():
+    """
+    Solicita o ID de um usuário e busca seus posts na API.
+    Exibe os posts encontrados e atualiza o total de posts visualizados.
+
+    Caso não existam posts ou haja erro na requisição, informa o usuário.
+    """
     global total_posts_vistos
 
     user_id = input("Digite o ID do usuário que deseja ver os posts (1 a 10): ")
@@ -122,6 +141,12 @@ def ver_posts_de_outro_usuario():
         print("Erro ao buscar os posts.")
 
 def criar_novo_post():
+    """
+    Solicita título e conteúdo para criar um novo post via API.
+    Atualiza a variável global de total de posts criados.
+
+    Informa o usuário sobre sucesso ou falha na criação do post.
+    """
     global total_posts_criados
 
     user_id = 1  # Simulação do usuário alex.meurer
@@ -146,6 +171,10 @@ def criar_novo_post():
         print("Erro ao criar o post.")   
 
 def mostrar_resumo():
+    """
+    Exibe um resumo da sessão atual com o total de posts visualizados,
+    comentários visualizados e posts criados.
+    """
     print("\n===== RESUMO DA SESSÃO =====")
     print(f"Posts visualizados: {total_posts_vistos}")
     print(f"Comentários visualizados: {total_comentarios_vistos}")
