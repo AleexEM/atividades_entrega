@@ -16,6 +16,8 @@ total_posts_vistos = 0
 total_comentarios_vistos = 0
 total_posts_criados = 0
 
+  
+
 def menu():
     """
     Mostra um menu de opções para o usuário e retorna a escolha feita.
@@ -150,31 +152,32 @@ def mostrar_resumo():
     print(f"Posts criados: {total_posts_criados}")
     print("=============================")
 
-login = input("Digite seu login")
-senha = input("Digite sua senha")
 
 while True:
+    login = input("Digite seu login: ")
+    senha = input("Digite sua senha: ")
 
     if login == usuario['login'] and senha == usuario["password"]:
-
-        opcao = menu()
-    
-        if opcao == "0":
-            mostrar_resumo()
-            print("Saindo do programa.")
-            break
-        elif opcao == "1":
-            visualiza_posts_e_comentarios()
-        elif opcao == "2":
-            criar_novo_post()
-        elif opcao == "3":
-            ver_meus_posts()
-        elif opcao == "4":
-            ver_posts_de_outro_usuario()
-        else:
-            print("Opção inválida.")
-
+        print("Login realizado com sucesso!")
+        break
     else:
-        print("Usuario ou senha incorreto! Digite Novamente.")
-        continue
-    
+        print("Usuário ou senha incorreto! Digite novamente.")
+
+while True:
+        
+    opcao = menu()
+
+    if opcao == "0":
+        mostrar_resumo()
+        print("Saindo do programa.")
+        break
+    elif opcao == "1":
+        visualiza_posts_e_comentarios()
+    elif opcao == "2":
+        criar_novo_post()
+    elif opcao == "3":
+        ver_meus_posts()
+    elif opcao == "4":
+        ver_posts_de_outro_usuario()
+    else:
+        print("Opção inválida.")
